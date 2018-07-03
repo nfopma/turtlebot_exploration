@@ -1,0 +1,44 @@
+<launch>
+
+  <!-- Start the turtlebot -->
+  <group ns="/robot_1">
+    <include file="$(find turtlebot_bringup)/launch/minimal.launch">
+    <arg name="robot_name" value="robot_1" />
+  </include>
+
+    <!-- Launch the 3D sensor -->
+    <arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)"/>  <!-- r200, kinect, asus_xtion_pro -->
+    <include file="$(find turtlebot_bringup)/launch/3dsensor.launch">
+      <arg name="rgb_processing" value="false" />
+      <arg name="depth_registration" value="false" />
+      <arg name="depth_processing" value="false" />
+
+      <!-- We must specify an absolute topic name because if not it will be prefixed by "$(arg camera)".
+           Probably is a bug in the nodelet manager: https://github.com/ros/nodelet_core/issues/7 -->
+      <arg name="scan_topic" value="/robot_1/scan" />
+    </include>
+
+    <!-- Gmapping -->
+    <arg name="custom_gmapping_launch_file" default="$(find turtlebot_navigation)/launch/includes/gmapping/$(arg 3d_sensor)_gmapping.launch.xml"/>
+    <include file="$(arg custom_gmapping_launch_file)">
+      <arg name="map_frame" value="/robot_1/map"/>
+      <arg name="odom_frame" value="/robot_1/odom"/>
+      <arg name="base_frame" value="/robot_1/base_link"/> <!-- not sure whether to use base_frame, base_link or base_footprint -->
+    </include>
+
+    <!-- Move base (standard configuration from turtlebot_navigation) -->
+    <include file="$(find rrt_exploration_tutorials)/launch/includes/move_baseSafe.launch">
+      <arg name="namespace" value="robot_1"/>
+    </include>
+    <!-- <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml">
+      <arg name="odom_frame_id"   default="/robot_1/odom"/>
+      <arg name="base_frame_id"   default="/robot_1/base_footprint"/>
+      <arg name="global_frame_id" default="/robot_1/map"/>
+    </include> -->
+
+  </group>
+
+  <!-- RRT Exploration -->
+  <include file="$(find rrt_exploration)/launch/single.launch" />
+
+</launch>

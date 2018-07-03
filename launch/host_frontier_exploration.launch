@@ -1,0 +1,6 @@
+<launch>
+
+  <!-- Bring up rviz with the settings provided by the husky_viz package. -->
+  <include file="$(find husky_viz)/launch/view_robot.launch" />
+
+</launch>

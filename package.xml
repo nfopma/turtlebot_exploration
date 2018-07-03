@@ -15,10 +15,9 @@
   <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
   <license>TODO</license>
 
-  <depend>turtlebot_bringup</depend>
+  <run_depend>turtlebot_bringup</run_depend>
 
   <depend>husky_navigation</depend>
-
 
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->

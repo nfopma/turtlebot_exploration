@@ -1,0 +1,11 @@
+# Launchfile/parameter package which contains launch files for the different exploration algorithms
+- git: {local-name: turtlebot_exploration, uri: 'https://github.com/nfopma/turtlebot_exploration.git', version: master}
+
+# Turtlebot fork which includes different sensor placement and namespaced minimal.launch
+- git: {local-name: turtlebot, uri: 'https://github.com/nfopma/turtlebot.git', version: kinetic}
+
+# RRT_exploration package
+- git: {local-name: rrt_exploration, uri: 'https://github.com/hasauino/rrt_exploration', version: kinetic-devel}
+
+# rrt_exploration_tutorials package
+- git: {local-name: rrt_exploration_tutorials, uri: 'https://github.com/hasauino/rrt_exploration_tutorials.git', version: master}

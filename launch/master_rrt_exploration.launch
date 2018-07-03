@@ -21,7 +21,7 @@
     </include>
 
     <!-- Move base and gmapping (standard configuration from turtlebot_navigation) -->
-    <include file="$(find turtlebot_exploration)/launch/includes/move_baseSafe.launch">
+    <include file="$(find rrt_exploration_tutorials)/launch/includes/move_baseSafe.launch">
       <arg name="namespace" value="$(arg namespace)"/>
     </include>
   </group>

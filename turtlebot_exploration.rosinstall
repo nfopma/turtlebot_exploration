@@ -9,3 +9,12 @@
 
 # rrt_exploration_tutorials package
 - git: {local-name: rrt_exploration_tutorials, uri: 'https://github.com/hasauino/rrt_exploration_tutorials.git', version: master}
+
+# frontier_exploration package
+- git: {local-name: frontier_exploration, uri: 'https://github.com/paulbovbel/frontier_exploration', version: indigo-devel}
+
+# husky (contains tutorials for frontier_exploration (could also be done through a rosdep - but it's nice to easily check the source code)
+- git: {local-name: frontier_exploration, uri: 'https://github.com/husky/husky.git', version: kinetic-devel}
+
+
+

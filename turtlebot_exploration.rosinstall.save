@@ -16,7 +16,6 @@
 # husky (contains tutorials for frontier_exploration (could also be done through a rosdep - but it's nice to easily check the source code)
 - git: {local-name: frontier_exploration, uri: 'https://github.com/husky/husky.git', version: kinetic-devel}
 
-# Hector exploration
-- git: {local-name: hector_navigation, uri: 'https://github.com/tu-darmstadt-ros-pkg/hector_navigation.git', version: catkin }
+- git: {local-name: hector_exploration_node, uri: 'https://github.com/tu-darmstadt-ros-pkg/hector_navigation.git
 
 

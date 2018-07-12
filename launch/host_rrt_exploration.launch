@@ -1,7 +1,11 @@
 <launch>
 
+<<<<<<< HEAD
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find rrt_exploration_tutorials)/launch/includes/rviz_config/single.rviz">
   <remap from="move_base_simple/goal" to="robot_1/move_base_simple/goal"/>
   </node>
+=======
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find turtlebot_exploration)/param/rrt_exploration_simple.rviz" />
+>>>>>>> 58f3af625779b783c9570a14a3041a2cf4e9e6d1
 
 </launch>
